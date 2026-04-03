@@ -298,10 +298,10 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 .order-title{font-family:var(--ff-display);font-size:20px;font-weight:700;margin-bottom:4px}
 .order-sub{font-size:12px;color:var(--text-2)}
 .order-close-btn{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:50%;background:var(--highlight);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;}
-.order-summary-box{margin:16px 18px;padding:14px;background:var(--highlight);border-radius:var(--r-md);}
-.osb-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-2);margin-bottom:10px}
-.osb-items{font-size:13px;color:var(--text);line-height:1.8}
-.osb-total{font-family:var(--ff-display);font-size:17px;font-weight:700;color:var(--primary);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+.order-summary-box{margin:16px 18px;padding:14px 16px;background:linear-gradient(135deg,#7B2D42,#9B3A54);border-radius:var(--r-md);box-shadow:0 4px 18px rgba(123,45,66,.28);}
+.osb-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:10px}
+.osb-items{font-size:13px;color:rgba(255,255,255,.88);line-height:1.8}
+.osb-total{font-family:var(--ff-display);font-size:17px;font-weight:700;color:#fff;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.22);}
 .order-form{padding:0 18px 28px}
 .ofield{margin-bottom:16px}
 .ofield label{display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-2);margin-bottom:7px;}
@@ -312,16 +312,13 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 .pay-opt{flex:1;padding:12px 8px;border:2px solid var(--border);border-radius:12px;background:#fff;font-family:var(--ff-body);font-size:13px;font-weight:600;color:var(--text-2);cursor:pointer;text-align:center;transition:all .2s;}
 .pay-opt.sel{border-color:var(--primary);background:var(--highlight);color:var(--primary)}
 .no-deposit-notice{margin:0 0 16px;padding:12px 14px;background:linear-gradient(135deg,rgba(90,171,107,.12),rgba(90,171,107,.06));border:1px solid rgba(90,171,107,.3);border-radius:12px;font-size:12.5px;color:#2d7a3f;line-height:1.55;}
-/* Receipt preview */
-.receipt-preview{margin-bottom:18px;padding:16px;background:var(--bg);border:1.5px dashed var(--border);border-radius:14px;}
-.rp-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-2);margin-bottom:10px}
-.rp-body{font-size:12px;color:var(--text-2);line-height:1.9;font-family:monospace;}
+/* Receipt preview — eliminada */
 .send-order-btn{width:100%;padding:15px;background:var(--whatsapp);color:#fff;border:none;border-radius:14px;font-family:var(--ff-body);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 6px 22px rgba(37,211,102,.38);transition:background .2s,transform .12s;}
 .send-order-btn:active{transform:scale(.97)}
 
 /* ══ GLOBAL BOTTOM NAV ══ */
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);display:flex;justify-content:space-around;padding:7px 0 14px;box-shadow:0 -4px 24px rgba(139,94,60,.09);height:var(--nav-h);}
-.nav-tab{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;color:var(--text-2);font-size:9.5px;font-weight:600;padding:4px 14px;border-radius:10px;transition:color .2s;}
+.nav-tab{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;color:var(--text-2);font-size:9.5px;font-weight:600;padding:4px 8px;border-radius:10px;transition:color .2s;}
 .nav-tab svg{width:21px;height:21px}
 .nav-tab.active{color:var(--primary)}
 .nav-tab-lbl{font-size:9.5px;font-weight:600}
@@ -599,15 +596,15 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
     <div class="order-form">
       <div class="ofield">
         <label for="ord-name">Tu nombre completo</label>
-        <input id="ord-name" type="text" placeholder="Ej: María González" oninput="updateReceipt()" autocomplete="name">
+        <input id="ord-name" type="text" placeholder="Ej: María González" autocomplete="name">
       </div>
       <div class="ofield">
         <label for="ord-addr">Sector / Dirección de entrega</label>
-        <input id="ord-addr" type="text" placeholder="Ej: Las Condes, Av. Apoquindo 1234" oninput="updateReceipt()" autocomplete="street-address">
+        <input id="ord-addr" type="text" placeholder="Ej: Las Condes, Av. Apoquindo 1234" autocomplete="street-address">
       </div>
       <div class="ofield">
         <label for="ord-date">Fecha preferida de entrega</label>
-        <input id="ord-date" type="date" oninput="updateReceipt()">
+        <input id="ord-date" type="date">
       </div>
       <div class="ofield">
         <label>Método de pago</label>
@@ -621,11 +618,7 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
       </div>
       <div class="ofield">
         <label for="ord-notes">Notas adicionales (opcional)</label>
-        <textarea id="ord-notes" placeholder="Alergias, instrucciones especiales, referencias de dirección..." oninput="updateReceipt()"></textarea>
-      </div>
-      <div class="receipt-preview">
-        <div class="rp-title">Vista previa del mensaje</div>
-        <div class="rp-body" id="receipt-preview-body"></div>
+        <textarea id="ord-notes" placeholder="Alergias, instrucciones especiales, referencias de dirección..."></textarea>
       </div>
       <button class="send-order-btn" onclick="sendOrderWA()">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
@@ -1010,12 +1003,11 @@ function openOrderForm(){
   $('ord-date').value=tomorrow.toISOString().split('T')[0];
   $('order-drawer').classList.add('open');
   fbLog('begin_checkout',{currency:'CLP',value:tot});
-  updateReceipt();
 }
 function closeOrder(){$('order-drawer').classList.remove('open');}
 function selectPay(btn){
   document.querySelectorAll('.pay-opt').forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel');selectedPayMethod=btn.dataset.pay;updateReceipt();
+  btn.classList.add('sel');selectedPayMethod=btn.dataset.pay;
 }
 function buildOrderMsg(){
   const name=($('ord-name').value||'').trim();
@@ -1027,7 +1019,6 @@ function buildOrderMsg(){
   S.cart.forEach(i=>{const lt=i.p.price/i.p.baseQty*i.qty;tot+=lt;lines+=`• ${i.p.name} ×${i.qty} unid. — ${fmtCLP(lt)}\n`;});
   return`📋 PEDIDO — Círculo de Sabores\n━━━━━━━━━━━━━━━━━━━━━━\n\n👤 Cliente: ${name||'(sin nombre)'}\n📍 Entrega: ${addr||'(por definir)'}\n📅 Fecha: ${dateStr}\n💳 Pago: ${selectedPayMethod}\n\n🛒 Productos:\n${lines}\n💰 TOTAL: ${fmtCLP(tot)}${tot>=FREE_SHIP?'\n🚀 Envío gratis incluido':''}\n${notes?`\n📝 Notas: ${notes}\n`:''}\n━━━━━━━━━━━━━━━━━━━━━━\nℹ️ Sin depósito previo. El pago se coordina al momento de entrega.`;
 }
-function updateReceipt(){$('receipt-preview-body').textContent=buildOrderMsg();}
 function sendOrderWA(){
   if(!S.cart.length){toast('⚠️ Carrito vacío');return;}
   const name=($('ord-name').value||'').trim();
@@ -1062,7 +1053,12 @@ function openWhatsApp(msg){fbLog('contact',{method:'whatsapp'});window.open('htt
 function openWAReview(id){const p=PRODUCTS.find(x=>x.id===id);openWhatsApp(`Hola! Quiero ver valoraciones de ${p?.name||'sus productos'} 🌟`);}
 
 /* ─── Scroll ─── */
-function scrollToCatalog(){$('grid').scrollIntoView({behavior:'smooth',block:'start'});}
+function scrollToCatalog(){
+  const grid=$('grid');const view=$('view-catalog');
+  if(!grid||!view)return;
+  const top=grid.getBoundingClientRect().top - view.getBoundingClientRect().top + view.scrollTop;
+  view.scrollTo({top:top-8,behavior:'smooth'});
+}
 function scrollToTop(){$('view-catalog').scrollTo({top:0,behavior:'smooth'});}
 
 /* ══════════════════════════════════════════
@@ -1271,4 +1267,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     const el=$('view-catalog');const pct=Math.round((el.scrollTop/(el.scrollHeight-el.clientHeight||1))*100);
     if(pct>maxS+24){maxS=pct;fbLog('scroll',{percent_scrolled:pct});}
   });
-  console
+  console.log('%c✅ Círculo de Sabores V10 — App OK','color:#8B5E3C;font-weight:bold;font-size:13px');
+});
+</script>
+</body>
+</html>

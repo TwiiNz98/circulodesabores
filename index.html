@@ -3,11 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content="Círculo de Sabores — Snacks y brownies saludables elaborados con amor en Chile.">
-<title>Círculo de Sabores — Snacks & Brownies Saludables</title>
+<meta name="description" content="Círculo de Sabores — Brownies y snacks saludables elaborados artesanalmente en Chile. Sin gluten, veganos y 100% naturales. Despacho en Santiago.">
+<meta name="keywords" content="brownies saludables Santiago, snacks saludables Chile, brownie sin gluten, postres sin azúcar, delivery brownies Santiago">
+<title>Círculo de Sabores — Brownies & Snacks Saludables Chile</title>
+
+<!-- ═══════ OPEN GRAPH ═══════ -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Círculo de Sabores — Brownies Saludables Chile">
+<meta property="og:description" content="Brownies y snacks artesanales, 100% naturales. Veganos, sin gluten y sin culpa. Despacho en Santiago.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:url" content="https://circulodesabores.cl">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Círculo de Sabores — Brownies Saludables Chile">
+<meta name="twitter:description" content="Brownies y snacks artesanales, 100% naturales. Despacho en Santiago.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=1200&q=80">
+
+<!-- ═══════ JSON-LD NEGOCIO LOCAL ═══════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "Círculo de Sabores",
+  "description": "Brownies y snacks saludables artesanales en Chile",
+  "telephone": "+56950147783",
+  "url": "https://circulodesabores.cl",
+  "sameAs": ["https://instagram.com/circulodesabores_cl"],
+  "servesCuisine": "Healthy Food",
+  "priceRange": "$$",
+  "areaServed": "Santiago, Chile",
+  "image": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80"
+}
+</script>
+
+<!-- ═══════ FONTS ═══════ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 
@@ -153,7 +186,7 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 .search-wrap:focus-within{box-shadow:0 0 0 3px rgba(139,94,60,.13);border-color:var(--accent)}
 .search-wrap input{flex:1;border:none;outline:none;font-family:var(--ff-body);font-size:14px;color:var(--text);background:transparent}
 .search-wrap input::placeholder{color:#B8B0A6}
-.chips-scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips-scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
 .chips-scroll::-webkit-scrollbar{display:none}
 .chip{
   flex-shrink:0;padding:7px 15px;border-radius:20px;
@@ -164,10 +197,25 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 .chip:active{transform:scale(.94)}
 .chip.active{background:var(--primary);color:#fff;box-shadow:0 4px 12px rgba(139,94,60,.32)}
 
+/* ═══════════════════════════ SORT BAR ═══════════════════════════ */
+.sort-bar{
+  display:flex;align-items:center;justify-content:flex-end;
+  padding:8px 18px 0;gap:8px;
+}
+.sort-label{font-size:11px;color:var(--text-2);font-weight:500}
+.sort-select{
+  padding:6px 10px;border-radius:10px;border:1.5px solid var(--border);
+  background:#fff;font-family:var(--ff-body);font-size:12px;color:var(--text);
+  outline:none;cursor:pointer;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236A6A6A'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 8px center;
+  padding-right:26px;
+}
+
 /* ═══════════════════════════ CATALOG ═══════════════════════════ */
 .catalog-head{
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 18px 12px;
+  padding:8px 18px 12px;
 }
 .catalog-head-title{font-family:var(--ff-display);font-size:19px;font-weight:700}
 .catalog-count{font-size:12px;color:var(--text-2);font-weight:500}
@@ -206,6 +254,16 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 .heart-btn.faved{animation:heart-pop .35s ease}
 @keyframes heart-pop{0%{transform:scale(1)}40%{transform:scale(1.45)}70%{transform:scale(.92)}100%{transform:scale(1)}}
 
+/* ═══ STOCK BADGE ═══ */
+.stock-badge{
+  position:absolute;top:8px;left:8px;z-index:2;
+  padding:3px 8px;border-radius:8px;
+  font-size:9.5px;font-weight:700;letter-spacing:.3px;
+}
+.badge-hot{background:var(--primary-dark);color:#fff}
+.badge-low{background:var(--danger);color:#fff}
+.badge-new{background:var(--success);color:#fff}
+
 .card-body{padding:12px}
 .card-name{font-family:var(--ff-display);font-size:13.5px;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:6px}
 .card-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
@@ -237,6 +295,23 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 }
 .nav-tab svg{width:21px;height:21px}
 .nav-tab.active{color:var(--primary)}
+
+/* ═══════════════════════════ FLOATING WA BUTTON ═══════════════════════════ */
+.wa-float{
+  position:fixed;bottom:90px;right:18px;z-index:190;
+  width:54px;height:54px;border-radius:50%;
+  background:var(--whatsapp);color:#fff;border:none;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,.42);
+  cursor:pointer;transition:transform .2s,box-shadow .2s;
+  animation:wa-pulse 3s ease-in-out infinite;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,.54)}
+.wa-float:active{transform:scale(.94)}
+@keyframes wa-pulse{
+  0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.42)}
+  50%{box-shadow:0 6px 32px rgba(37,211,102,.70),0 0 0 8px rgba(37,211,102,.10)}
+}
 
 /* ═══════════════════════════ FOOTER (CATALOG) ═══════════════════════════ */
 .site-footer{
@@ -305,6 +380,24 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 .info-ico{font-size:22px;flex-shrink:0;margin-top:1px}
 .info-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--highlight);margin-bottom:4px}
 .info-text{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.92)}
+
+/* ═══════ TAMBIÉN TE PUEDE GUSTAR ═══════ */
+.related-sec{padding:0 18px 24px}
+.related-title{font-family:var(--ff-display);font-size:17px;font-weight:700;margin-bottom:14px}
+.related-scroll{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.related-scroll::-webkit-scrollbar{display:none}
+.related-card{
+  flex-shrink:0;width:145px;background:var(--surface);border-radius:var(--r-md);
+  overflow:hidden;box-shadow:var(--sh-sm);cursor:pointer;
+  transition:transform .2s;
+}
+.related-card:active{transform:scale(.96)}
+.related-thumb{height:90px;overflow:hidden;background:linear-gradient(135deg,var(--highlight),var(--chip-bg))}
+.related-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.related-card:hover .related-thumb img{transform:scale(1.08)}
+.related-body{padding:9px}
+.related-name{font-size:11px;font-weight:600;line-height:1.3;color:var(--text);margin-bottom:5px}
+.related-price{font-family:var(--ff-display);font-size:12.5px;font-weight:700;color:var(--primary)}
 
 /* ═══════════════════════════ SUBSCRIBE ═══════════════════════════ */
 .sub-box{
@@ -478,6 +571,12 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 }
 .wa-checkout:active{background:#1fa854}
 
+/* ═══════ FREE SHIPPING NOTICE ═══════ */
+.free-ship-notice{
+  font-size:11.5px;color:var(--success);font-weight:600;text-align:center;
+  padding:6px 0 0;
+}
+
 /* ═══════════════════════════ TOAST ═══════════════════════════ */
 .toast{
   position:fixed;top:78px;left:50%;
@@ -493,6 +592,18 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 
 /* ═══════════════════════════ DETAIL BOTTOM PADDING ═══════════════════════════ */
 #view-detail{padding-bottom:90px}
+
+/* ═══ FIREBASE STATUS BADGE ═══ */
+.fb-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:3px 8px;border-radius:6px;
+  background:rgba(255,152,0,.12);color:#f57c00;
+  font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  position:fixed;bottom:80px;left:18px;z-index:150;opacity:.7;
+  pointer-events:none;
+}
+.fb-badge.ok{background:rgba(90,171,107,.12);color:var(--success)}
+.fb-dot{width:5px;height:5px;border-radius:50%;background:currentColor}
 </style>
 </head>
 <body>
@@ -504,102 +615,109 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 ══════════════════════════════════════════════════════ -->
 <div id="view-catalog" class="view active">
 
-  <nav class="navbar">
-    <a class="navbar-brand" href="#">
-      <div class="logo-orb">C·S</div>
+  <nav class="navbar" aria-label="Navegación principal">
+    <a class="navbar-brand" href="#" aria-label="Círculo de Sabores - Inicio">
+      <div class="logo-orb" aria-hidden="true">C·S</div>
       <div class="brand-copy">
         <div class="brand-name">Círculo de Sabores</div>
         <div class="brand-tagline">Snacks Saludables · Chile</div>
       </div>
     </a>
     <div class="nav-actions">
-      <button class="nav-btn" onclick="focusSearch()" title="Buscar">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      </button>
-      <button class="nav-btn" onclick="openCart()" title="Carrito">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        <span class="cart-dot" id="cart-dot">0</span>
+      <button class="nav-btn" onclick="openCart()" aria-label="Abrir carrito de compras">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-dot" id="cart-dot" aria-live="polite">0</span>
       </button>
     </div>
   </nav>
 
-  <div class="hero">
-    <img id="hero-img"
+  <div class="hero" role="banner">
+    <img class="hero-img"
       src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80"
-      alt="Brownies saludables Círculo de Sabores"
-      onerror="this.style.display='none'">
-    <div class="hero-veil"></div>
+      alt="Brownies artesanales Círculo de Sabores" loading="eager">
+    <div class="hero-veil" aria-hidden="true"></div>
     <div class="hero-content">
-      <div class="hero-pill">✨ Temporada · Nuevos Sabores</div>
+      <div class="hero-pill" aria-hidden="true">🌿 100% Artesanal</div>
       <h1 class="hero-title">Postres Saludables que Sí Saben a Postre</h1>
       <p class="hero-sub">Brownies y snacks artesanales, sin culpa y llenos de sabor</p>
-      <button class="hero-btn" onclick="scrollToCatalog()">
+      <button class="hero-btn" onclick="scrollToCatalog()" aria-label="Ver catálogo de productos">
         Ver Productos
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
     </div>
-    <div class="hero-spin">
+    <div class="hero-spin" aria-hidden="true">
       <span class="sn">★</span>
       <span class="sl">100%<br>Natural</span>
     </div>
   </div>
 
-  <div class="promo-banner">
+  <div class="promo-banner" role="complementary" aria-label="Oferta especial">
     <div class="pb-eyebrow">🌿 Oferta Especial</div>
     <div class="pb-title">Pack Degustación<br>Brownie Collection</div>
-    <button class="pb-btn" onclick="openWhatsApp('Me interesa el Pack Degustación Brownie Collection')">
+    <button class="pb-btn" onclick="openWhatsApp('Me interesa el Pack Degustación Brownie Collection 🍫')">
       💬 Pedir por WhatsApp →
     </button>
   </div>
 
-  <div class="filter-zone">
+  <div class="filter-zone" role="search" aria-label="Buscar y filtrar productos">
     <div class="search-wrap">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B0A898" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="search-inp" type="text" placeholder="Buscar productos..." oninput="onSearch()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B0A898" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-inp" type="search" placeholder="Buscar productos..." oninput="onSearch()" aria-label="Buscar productos">
     </div>
-    <div class="chips-scroll" id="chips-row">
-      <button class="chip active" data-f="todos"     onclick="setFilter('todos',this)">Todos</button>
-      <button class="chip"        data-f="brownies"  onclick="setFilter('brownies',this)">🍫 Brownies</button>
-      <button class="chip"        data-f="snacks"    onclick="setFilter('snacks',this)">🌾 Snacks</button>
+    <div class="chips-scroll" id="chips-row" role="group" aria-label="Filtrar por categoría">
+      <button class="chip active" data-f="todos"      onclick="setFilter('todos',this)">Todos</button>
+      <button class="chip"        data-f="brownies"   onclick="setFilter('brownies',this)">🍫 Brownies</button>
+      <button class="chip"        data-f="snacks"     onclick="setFilter('snacks',this)">🌾 Snacks</button>
       <button class="chip"        data-f="saludables" onclick="setFilter('saludables',this)">🥑 Sin Gluten</button>
-      <button class="chip"        data-f="dulces"    onclick="setFilter('dulces',this)">🍬 Dulces</button>
+      <button class="chip"        data-f="dulces"     onclick="setFilter('dulces',this)">🍬 Dulces</button>
     </div>
+  </div>
+
+  <div class="sort-bar" aria-label="Ordenar productos">
+    <label class="sort-label" for="sort-sel">Ordenar:</label>
+    <select id="sort-sel" class="sort-select" onchange="onSort()" aria-label="Criterio de ordenamiento">
+      <option value="default">Destacados</option>
+      <option value="price-asc">Precio: menor a mayor</option>
+      <option value="price-desc">Precio: mayor a menor</option>
+      <option value="rating">Mejor valorados</option>
+      <option value="popular">Más vendidos</option>
+    </select>
   </div>
 
   <div class="catalog-head">
     <div class="catalog-head-title" id="cat-label">Catálogo de Productos</div>
-    <div class="catalog-count" id="cat-count">6 productos</div>
+    <div class="catalog-count" id="cat-count" aria-live="polite">6 productos</div>
   </div>
 
-  <div class="grid" id="grid"></div>
+  <main class="grid" id="grid" aria-label="Listado de productos"></main>
 
   <footer class="site-footer">
     <div class="ft-logo">Círculo de Sabores</div>
     <p>Snacks y brownies 100% naturales,<br>elaborados con amor en Chile 🇨🇱</p>
-    <div class="ft-social">
-      <a href="https://wa.me/56950147783?text=Hola!%20Me%20interesan%20sus%20productos" target="_blank" class="ft-soc-btn" title="WhatsApp">💬</a>
-      <a href="https://instagram.com/circulodesabores_cl" target="_blank" class="ft-soc-btn" title="Instagram">📸</a>
-      <a href="mailto:contacto@circulodesabores.cl" class="ft-soc-btn" title="Email">✉️</a>
+    <div class="ft-social" aria-label="Redes sociales">
+      <a href="https://wa.me/56950147783?text=Hola!%20Me%20interesan%20sus%20productos" target="_blank" rel="noopener" class="ft-soc-btn" aria-label="WhatsApp">💬</a>
+      <a href="https://instagram.com/circulodesabores_cl" target="_blank" rel="noopener" class="ft-soc-btn" aria-label="Instagram">📸</a>
+      <a href="mailto:contacto@circulodesabores.cl" class="ft-soc-btn" aria-label="Email">✉️</a>
     </div>
     <hr class="ft-rule">
     <div class="ft-copy">© 2025 Círculo de Sabores · @circulodesabores_cl · +56 9 5014 7783</div>
   </footer>
 
-  <nav class="bottom-nav">
-    <button class="nav-tab active" onclick="scrollToTop()">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  <nav class="bottom-nav" aria-label="Navegación inferior">
+    <button class="nav-tab active" onclick="scrollToTop()" aria-label="Inicio">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
       Inicio
     </button>
-    <button class="nav-tab" onclick="setFilter('brownies',null);scrollToCatalog()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2"/></svg>
+    <button class="nav-tab" onclick="setFilter('brownies',null);scrollToCatalog()" aria-label="Ver brownies">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2"/></svg>
       Productos
     </button>
-    <button class="nav-tab" onclick="openCart()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    <button class="nav-tab" onclick="openCart()" aria-label="Ver carrito">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
       Carrito
     </button>
-    <button class="nav-tab" onclick="openWhatsApp('Hola! Me gustaría conocer más sobre sus productos saludables 🍫')">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <button class="nav-tab" onclick="openWhatsApp('Hola! Me gustaría conocer más sobre sus productos saludables 🍫')" aria-label="Contactar por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
       WhatsApp
     </button>
   </nav>
@@ -608,39 +726,119 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--text);min-heigh
 <!-- ══════════════════════════════════════════════════════
      DETAIL VIEW
 ══════════════════════════════════════════════════════ -->
-<div id="view-detail" class="view slide-right">
+<div id="view-detail" class="view slide-right" aria-label="Detalle de producto">
   <div id="detail-root"></div>
 </div>
 
 </div><!-- #app -->
 
+<!-- Floating WhatsApp -->
+<button class="wa-float" onclick="openWhatsApp('Hola! Tengo una consulta sobre sus productos 🍫')"
+  aria-label="Chatear por WhatsApp" title="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</button>
+
 <!-- Cart Drawer -->
-<div class="cart-drawer" id="cart-drawer">
+<div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Carrito de compras">
   <div class="cart-veil" onclick="closeCart()"></div>
   <div class="cart-panel">
     <div class="cart-phead">
       <div class="cart-ptitle">🛒 Mi Carrito</div>
-      <button class="cart-pclose" onclick="closeCart()">✕</button>
+      <button class="cart-pclose" onclick="closeCart()" aria-label="Cerrar carrito">✕</button>
     </div>
-    <div id="cart-list"></div>
+    <div id="cart-list" aria-live="polite"></div>
     <div class="cart-total-row">
       <div class="cart-total-label">Total estimado</div>
       <div class="cart-total-val" id="cart-total-val">$0</div>
     </div>
+    <div class="free-ship-notice" id="ship-notice"></div>
     <button class="checkout-btn" onclick="checkoutWA()">Finalizar Pedido</button>
     <button class="wa-checkout" onclick="checkoutWA()">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
       Pedir por WhatsApp
     </button>
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="fb-badge" id="fb-badge"><div class="fb-dot"></div>Firebase</div>
 
 <!-- ══════════════════════════════════════════════════════
-     JAVASCRIPT
+     FIREBASE SDK (ES Module)
+══════════════════════════════════════════════════════ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAnalytics, logEvent, setUserProperties } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD5LTpREe1AIRo_XY7-1wLTy488vHW7DOE",
+    authDomain: "circulodesabores-e46f9.firebaseapp.com",
+    projectId: "circulodesabores-e46f9",
+    storageBucket: "circulodesabores-e46f9.firebasestorage.app",
+    messagingSenderId: "188245050402",
+    appId: "1:188245050402:web:268b266471530a8898767b",
+    measurementId: "G-ZK7TYHH2SP"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  // ── Expose globals for non-module scripts ──
+  window._fbAnalytics = analytics;
+  window._fbDb = db;
+  window._fbLogEvent = logEvent;
+  window._fbCollection = collection;
+  window._fbAddDoc = addDoc;
+  window._fbServerTimestamp = serverTimestamp;
+
+  // ── Track page view ──
+  logEvent(analytics, 'page_view', { page_title: 'Círculo de Sabores', page_location: window.location.href });
+
+  // ── Mark Firebase as ready ──
+  const badge = document.getElementById('fb-badge');
+  if(badge){ badge.classList.add('ok'); badge.innerHTML='<div class="fb-dot"></div>Firebase OK'; }
+  setTimeout(()=>{ if(badge) badge.style.opacity='0'; }, 4000);
+
+  console.log('%c🔥 Firebase OK — Círculo de Sabores', 'color:#f57c00;font-weight:bold');
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     JAVASCRIPT (App Logic)
 ══════════════════════════════════════════════════════ -->
 <script>
+/* ─── FIREBASE HELPERS (called after module loads) ─── */
+function fbLog(eventName, params){
+  if(window._fbLogEvent && window._fbAnalytics){
+    try{ window._fbLogEvent(window._fbAnalytics, eventName, params||{}); }
+    catch(e){ console.warn('FB log error:', e); }
+  }
+}
+async function fbSaveSubscriber(email, productId){
+  if(!window._fbDb) return false;
+  try{
+    await window._fbAddDoc(
+      window._fbCollection(window._fbDb, 'subscribers'),
+      { email, productId, createdAt: window._fbServerTimestamp ? window._fbServerTimestamp() : new Date().toISOString(), source:'web' }
+    );
+    return true;
+  }catch(e){ console.warn('FB Firestore error:', e); return false; }
+}
+async function fbSaveCartEvent(cart, total){
+  if(!window._fbDb) return;
+  try{
+    await window._fbAddDoc(
+      window._fbCollection(window._fbDb, 'cart_events'),
+      {
+        items: cart.map(i=>({id:i.id, name:i.p.name, qty:i.qty, price:i.p.price})),
+        total,
+        createdAt: window._fbServerTimestamp ? window._fbServerTimestamp() : new Date().toISOString()
+      }
+    );
+  }catch(e){ console.warn('FB cart event error:', e); }
+}
+
 /* ─── DATA ─── */
 const PRODUCTS = [
   {
@@ -649,6 +847,7 @@ const PRODUCTS = [
     price:25000,unit:"8 unid.",baseQty:8,
     cats:["brownies","saludables"],
     tags:["Sin Gluten","Vegano"],emoji:"🥑",
+    badge:"hot",
     img:"https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=500&q=80",
     big:"https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80",
     texture:"Fudgy y densa con crocantes de cacao nibs",
@@ -662,6 +861,7 @@ const PRODUCTS = [
     price:22000,unit:"8 unid.",baseQty:8,
     cats:["brownies","snacks"],
     tags:["Sin Gluten","15 min"],emoji:"🍫",
+    badge:"new",
     img:"https://images.unsplash.com/photo-1564355808539-22fda35bed7e?auto=format&fit=crop&w=500&q=80",
     big:"https://images.unsplash.com/photo-1564355808539-22fda35bed7e?auto=format&fit=crop&w=800&q=80",
     texture:"Crujiente por fuera, suave por dentro con trozos de nuez tostada",
@@ -675,6 +875,7 @@ const PRODUCTS = [
     price:28000,unit:"8 unid.",baseQty:8,
     cats:["brownies","saludables"],
     tags:["Alto en Proteína","Keto"],emoji:"🌰",
+    badge:"low",
     img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80",
     big:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
     texture:"Húmedo y denso con crocante de almendra entera en cada mordida",
@@ -688,6 +889,7 @@ const PRODUCTS = [
     price:24000,unit:"8 unid.",baseQty:8,
     cats:["brownies","dulces"],
     tags:["Alto en Fibra","Energético"],emoji:"🌾",
+    badge:null,
     img:"https://images.unsplash.com/photo-1621309659772-22cbad2b6aa1?auto=format&fit=crop&w=500&q=80",
     big:"https://images.unsplash.com/photo-1621309659772-22cbad2b6aa1?auto=format&fit=crop&w=800&q=80",
     texture:"Ligero y esponjoso con textura granulada de avena integral",
@@ -701,6 +903,7 @@ const PRODUCTS = [
     price:18000,unit:"6 unid.",baseQty:6,
     cats:["dulces","saludables"],
     tags:["Raw","Sin Azúcar"],emoji:"✨",
+    badge:"new",
     img:"https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=500&q=80",
     big:"https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=800&q=80",
     texture:"Suave y aterciopelada, se funde en la boca con cada bocado",
@@ -714,6 +917,7 @@ const PRODUCTS = [
     price:20000,unit:"10 unid.",baseQty:10,
     cats:["snacks","saludables"],
     tags:["Sin Gluten","Alto en Fibra"],emoji:"⚡",
+    badge:null,
     img:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=500&q=80",
     big:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80",
     texture:"Firme y masticable, satisfactorio y llenador con cada bocado",
@@ -723,10 +927,13 @@ const PRODUCTS = [
   }
 ];
 
+const FREE_SHIP_THRESHOLD = 40000;
+
 /* ─── STATE ─── */
 const S = {
   filter:'todos',
   q:'',
+  sort:'default',
   cart:[],
   favs:new Set(),
   curId:null,
@@ -744,14 +951,43 @@ function toast(msg){
   clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2700);
 }
 
+/* ─── LOCALSTORAGE PERSISTENCE ─── */
+function saveState(){
+  try{
+    localStorage.setItem('cs_cart', JSON.stringify(S.cart));
+    localStorage.setItem('cs_favs', JSON.stringify([...S.favs]));
+  }catch(e){}
+}
+function loadState(){
+  try{
+    const cart = localStorage.getItem('cs_cart');
+    const favs = localStorage.getItem('cs_favs');
+    if(cart){ S.cart = JSON.parse(cart); }
+    if(favs){ S.favs = new Set(JSON.parse(favs)); }
+  }catch(e){}
+}
+
 /* ─── CATALOG RENDER ─── */
 function filtered(){
-  return PRODUCTS.filter(p=>{
-    const mf=S.filter==='todos'||p.cats.includes(S.filter);
-    const ms=p.name.toLowerCase().includes(S.q.toLowerCase());
-    return mf&&ms;
+  let list = PRODUCTS.filter(p=>{
+    const mf = S.filter==='todos' || p.cats.includes(S.filter);
+    const ms = p.name.toLowerCase().includes(S.q.toLowerCase());
+    return mf && ms;
   });
+  switch(S.sort){
+    case 'price-asc':  list=[...list].sort((a,b)=>a.price-b.price); break;
+    case 'price-desc': list=[...list].sort((a,b)=>b.price-a.price); break;
+    case 'rating':     list=[...list].sort((a,b)=>b.avg-a.avg); break;
+    case 'popular':    list=[...list].sort((a,b)=>b.total-a.total); break;
+  }
+  return list;
 }
+
+const BADGE_CONFIG = {
+  hot:  {cls:'badge-hot', label:'⭐ Más Vendido'},
+  low:  {cls:'badge-low', label:'🔥 Últimas Unidades'},
+  new:  {cls:'badge-new', label:'✨ Nuevo'}
+};
 
 function renderGrid(){
   const g=$('grid'), list=filtered();
@@ -760,12 +996,18 @@ function renderGrid(){
     g.innerHTML=`<div class="empty"><div class="empty-icon">🔍</div><p>No encontramos productos</p></div>`;
     return;
   }
-  g.innerHTML=list.map((p,i)=>`
-    <div class="card" style="animation-delay:${i*.065}s" onclick="goDetail(${p.id})">
+  g.innerHTML=list.map((p,i)=>{
+    const bc = p.badge ? BADGE_CONFIG[p.badge] : null;
+    return `
+    <div class="card" style="animation-delay:${i*.065}s" onclick="goDetail(${p.id})" role="article" aria-label="${p.name}">
       <div class="card-thumb">
         <img src="${p.img}" alt="${p.name}" loading="lazy"
           onerror="this.parentElement.style.background='linear-gradient(135deg,#8B5E3C,#C7A17A)';this.remove()">
-        <button class="heart-btn ${S.favs.has(p.id)?'faved':''}" onclick="toggleFav(event,${p.id})">
+        ${bc ? `<div class="stock-badge ${bc.cls}" aria-label="${bc.label}">${bc.label}</div>` : ''}
+        <button class="heart-btn ${S.favs.has(p.id)?'faved':''}"
+          onclick="toggleFav(event,${p.id})"
+          aria-label="${S.favs.has(p.id)?'Quitar de favoritos':'Añadir a favoritos'}"
+          aria-pressed="${S.favs.has(p.id)}">
           ${S.favs.has(p.id)?'❤️':'🤍'}
         </button>
       </div>
@@ -773,10 +1015,10 @@ function renderGrid(){
         <div class="card-name">${p.name}</div>
         <div class="card-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
         <div class="card-price">${fmtCLP(p.price)} <small>/ ${p.unit}</small></div>
-        <button class="card-action" onclick="event.stopPropagation();goDetail(${p.id})">Ver Detalle</button>
+        <button class="card-action" onclick="event.stopPropagation();goDetail(${p.id})" aria-label="Ver detalle de ${p.name}">Ver Detalle</button>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 /* ─── FILTER & SEARCH ─── */
@@ -788,9 +1030,18 @@ function setFilter(f,btn){
     const c=document.querySelector(`[data-f="${f}"]`);
     if(c) c.classList.add('active');
   }
+  fbLog('select_content',{content_type:'filter',item_id:f});
   renderGrid();
 }
-function onSearch(){S.q=$('search-inp').value;renderGrid()}
+function onSearch(){
+  S.q=$('search-inp').value;
+  renderGrid();
+}
+function onSort(){
+  S.sort=$('sort-sel').value;
+  fbLog('select_content',{content_type:'sort',item_id:S.sort});
+  renderGrid();
+}
 
 /* ─── NAVIGATION ─── */
 function goDetail(id){
@@ -802,6 +1053,8 @@ function goDetail(id){
   d.classList.replace('slide-right','active');
   d.scrollTo(0,0);
   setTimeout(()=>animBars(p),520);
+  // Firebase: view_item
+  fbLog('view_item',{item_id:String(p.id), item_name:p.name, price:p.price, currency:'CLP'});
 }
 function goBack(){
   $('view-catalog').classList.replace('slide-left','active');
@@ -811,12 +1064,13 @@ function goBack(){
 /* ─── DETAIL RENDER ─── */
 function renderDetail(p){
   const tot=p.dist.reduce((a,b)=>a+b,0);
+  const related=PRODUCTS.filter(x=>x.id!==p.id && x.cats.some(c=>p.cats.includes(c))).slice(0,3);
   $('detail-root').innerHTML=`
     <div class="d-hero">
       <img src="${p.big}" alt="${p.name}"
         onerror="this.parentElement.style.background='linear-gradient(145deg,#3D2010,#8B5E3C,#C7A17A)';this.remove()">
       <div class="d-veil"></div>
-      <button class="d-close" onclick="goBack()">✕</button>
+      <button class="d-close" onclick="goBack()" aria-label="Volver al catálogo">✕</button>
       <div class="d-hero-text">
         <div class="d-sub-label">${p.emoji} Círculo de Sabores</div>
         <h1 class="d-title">${p.name}</h1>
@@ -825,24 +1079,24 @@ function renderDetail(p){
     </div>
 
     <div class="sec">
-      <div class="sec-divider">Productos</div>
+      <div class="sec-divider">Descripción</div>
       <div class="info-card">
         <div class="info-row">
-          <div class="info-ico">🍫</div>
+          <div class="info-ico" aria-hidden="true">🍫</div>
           <div>
             <div class="info-label">Textura</div>
             <div class="info-text">${p.texture}</div>
           </div>
         </div>
         <div class="info-row">
-          <div class="info-ico">👅</div>
+          <div class="info-ico" aria-hidden="true">👅</div>
           <div>
             <div class="info-label">Sabor</div>
             <div class="info-text">${p.taste}</div>
           </div>
         </div>
         <div class="info-row">
-          <div class="info-ico">🥑</div>
+          <div class="info-ico" aria-hidden="true">🥑</div>
           <div>
             <div class="info-label">Ingredientes Clave</div>
             <div class="info-text">${p.ingredients}</div>
@@ -851,16 +1105,35 @@ function renderDetail(p){
       </div>
     </div>
 
+    ${related.length ? `
+    <div class="related-sec">
+      <div class="related-title">También te puede gustar</div>
+      <div class="related-scroll">
+        ${related.map(r=>`
+        <div class="related-card" onclick="goDetail(${r.id})" role="button" aria-label="${r.name}">
+          <div class="related-thumb">
+            <img src="${r.img}" alt="${r.name}" loading="lazy"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#8B5E3C,#C7A17A)';this.remove()">
+          </div>
+          <div class="related-body">
+            <div class="related-name">${r.name}</div>
+            <div class="related-price">${fmtCLP(r.price)}</div>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>` : ''}
+
     <div class="sub-box">
       <div class="sub-title">¿Quieres Acceso a Productos Exclusivos?</div>
       <div class="sub-desc">Suscríbete y recibe descuentos, nuevos sabores y novedades antes que nadie.</div>
-      <div class="benefit-chips">
+      <div class="benefit-chips" aria-label="Beneficios">
         <div class="bcchip">🌿 Vegano y Sin Gluten</div>
         <div class="bcchip">💪 Alto en Fibra</div>
         <div class="bcchip">🚫 Sin Azúcares</div>
       </div>
       <div class="email-row">
-        <input class="email-inp" type="email" id="em-${p.id}" placeholder="Tu email...">
+        <label for="em-${p.id}" class="sr-only">Tu email</label>
+        <input class="email-inp" type="email" id="em-${p.id}" placeholder="Tu email..." autocomplete="email">
         <button class="sub-btn" onclick="doSubscribe(${p.id})">SUSCRIBIRSE</button>
       </div>
     </div>
@@ -869,22 +1142,26 @@ function renderDetail(p){
       <div class="g-box">
         <div class="g-head">Garantía & Envío</div>
         <div class="g-items">
-          <div class="g-item"><div class="g-item-ico">🚀</div><div class="g-item-txt">Envío Rápido en Santiago</div></div>
-          <div class="g-item"><div class="g-item-ico">🔒</div><div class="g-item-txt">Pago Seguro</div></div>
-          <div class="g-item"><div class="g-item-ico">🤝</div><div class="g-item-txt">Satisfacción Garantizada</div></div>
+          <div class="g-item"><div class="g-item-ico" aria-hidden="true">🚀</div><div class="g-item-txt">Envío Rápido en Santiago</div></div>
+          <div class="g-item"><div class="g-item-ico" aria-hidden="true">🔒</div><div class="g-item-txt">Pago Seguro</div></div>
+          <div class="g-item"><div class="g-item-ico" aria-hidden="true">🤝</div><div class="g-item-txt">Satisfacción Garantizada</div></div>
         </div>
       </div>
       <div class="r-box">
         <div class="r-head">Valoraciones</div>
+        <div aria-label="Distribución de valoraciones">
         ${[5,4,3,2,1].map((s,i)=>{
           const cnt=p.dist[i]||0;
           const pct=tot?Math.round((cnt/tot)*100):0;
           return `<div class="rating-row">
-            <div class="rstar">${s}</div>
-            <div class="rbar-wrap"><div class="rbar-fill" id="rb-${p.id}-${s}" data-pct="${pct}"></div></div>
+            <div class="rstar" aria-label="${s} estrellas">${s}</div>
+            <div class="rbar-wrap" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100">
+              <div class="rbar-fill" id="rb-${p.id}-${s}" data-pct="${pct}"></div>
+            </div>
             <div class="rcount">${cnt}</div>
           </div>`;
         }).join('')}
+        </div>
         <div class="rating-total"><strong>${p.total}</strong> valoraciones acumuladas</div>
         <button class="see-all" onclick="openWAReview(${p.id})">Ver todas las valoraciones →</button>
       </div>
@@ -892,22 +1169,25 @@ function renderDetail(p){
 
     <div class="social-zone">
       <div class="social-row">
-        <button class="fav-large ${S.favs.has(p.id)?'faved':''}" id="df-btn" onclick="toggleFavDetail(${p.id})">
+        <button class="fav-large ${S.favs.has(p.id)?'faved':''}" id="df-btn"
+          onclick="toggleFavDetail(${p.id})"
+          aria-label="${S.favs.has(p.id)?'Quitar de favoritos':'Guardar en favoritos'}"
+          aria-pressed="${S.favs.has(p.id)}">
           <span id="df-ico">${S.favs.has(p.id)?'❤️':'🤍'}</span>
           <span>Favoritos</span>
         </button>
         <a href="https://wa.me/56950147783?text=${encodeURIComponent('Hola! Me interesa '+p.name+' 🍫')}"
-           target="_blank" class="soc-btn soc-wa" title="WhatsApp">💬</a>
+           target="_blank" rel="noopener" class="soc-btn soc-wa" aria-label="Preguntar por WhatsApp">💬</a>
         <a href="https://instagram.com/circulodesabores_cl"
-           target="_blank" class="soc-btn soc-ig" title="Instagram">📸</a>
+           target="_blank" rel="noopener" class="soc-btn soc-ig" aria-label="Ver Instagram">📸</a>
       </div>
     </div>
 
-    <div class="sticky-cta">
-      <div class="qty-stepper">
-        <button class="qty-btn" onclick="stepQty(-1)">−</button>
-        <div class="qty-val" id="qv">${S.qty}</div>
-        <button class="qty-btn" onclick="stepQty(1)">+</button>
+    <div class="sticky-cta" role="region" aria-label="Añadir al carrito">
+      <div class="qty-stepper" aria-label="Cantidad">
+        <button class="qty-btn" onclick="stepQty(-1)" aria-label="Reducir cantidad">−</button>
+        <div class="qty-val" id="qv" aria-live="polite">${S.qty}</div>
+        <button class="qty-btn" onclick="stepQty(1)" aria-label="Aumentar cantidad">+</button>
       </div>
       <div class="price-area">
         <div class="sticky-price" id="sp">${fmtCLP(p.price)}</div>
@@ -945,11 +1225,18 @@ function addCart(id){
   const ex=S.cart.find(x=>x.id===id);
   if(ex) ex.qty+=1; else S.cart.push({id,qty:1,p});
   updateDot();
+  saveState();
   toast('✅ '+p.name.split(' ').slice(0,3).join(' ')+' añadido');
+  // Firebase: add_to_cart
+  fbLog('add_to_cart',{currency:'CLP', value:p.price, items:[{item_id:String(p.id), item_name:p.name, price:p.price}]});
 }
 function removeCart(id){
+  const item=S.cart.find(x=>x.id===id);
   S.cart=S.cart.filter(x=>x.id!==id);
-  updateDot();renderCartPanel();
+  updateDot();
+  saveState();
+  renderCartPanel();
+  if(item) fbLog('remove_from_cart',{currency:'CLP', items:[{item_id:String(id), item_name:item.p.name}]});
 }
 function updateDot(){
   const total=S.cart.reduce((a,b)=>a+b.qty,0);
@@ -961,6 +1248,7 @@ function updateDot(){
 function openCart(){
   S.cartOpen=true;renderCartPanel();
   $('cart-drawer').classList.add('open');
+  fbLog('view_cart');
 }
 function closeCart(){
   S.cartOpen=false;$('cart-drawer').classList.remove('open');
@@ -970,6 +1258,7 @@ function renderCartPanel(){
   if(!S.cart.length){
     list.innerHTML=`<div style="text-align:center;padding:28px;color:var(--text-2)"><div style="font-size:40px;margin-bottom:10px">🛒</div><p>Tu carrito está vacío</p></div>`;
     $('cart-total-val').textContent='$0';
+    $('ship-notice').textContent='';
     return;
   }
   let total=0;
@@ -985,11 +1274,19 @@ function renderCartPanel(){
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
         <div class="ci-price">${fmtCLP(lt)}</div>
         <button onclick="removeCart(${item.id})"
-          style="background:none;border:none;font-size:11px;color:var(--text-2);cursor:pointer">Eliminar</button>
+          style="background:none;border:none;font-size:11px;color:var(--text-2);cursor:pointer" aria-label="Eliminar ${item.p.name}">Eliminar</button>
       </div>
     </div>`;
   }).join('');
   $('cart-total-val').textContent=fmtCLP(total);
+  // Free shipping notice
+  const sn=$('ship-notice');
+  if(total>=FREE_SHIP_THRESHOLD){
+    sn.textContent='🚀 ¡Envío gratis incluido!';
+  } else {
+    const diff=fmtCLP(FREE_SHIP_THRESHOLD-total);
+    sn.textContent=`Agrega ${diff} más para envío gratis`;
+  }
 }
 function checkoutWA(){
   if(!S.cart.length){toast('⚠️ Tu carrito está vacío');return}
@@ -999,7 +1296,10 @@ function checkoutWA(){
     const lt=it.p.price*it.qty;total+=lt;
     msg+=`• ${it.p.name} ×${it.qty} (${it.p.unit}) — ${fmtCLP(lt)}\n`;
   });
-  msg+=`\n*Total: ${fmtCLP(total)}*\n\nPor favor confirmar disponibilidad. ¡Gracias! 🍫`;
+  msg+=`\n*Total: ${fmtCLP(total)}*\n\nPor favor confirmar disponibilidad y forma de pago. ¡Gracias! 🍫`;
+  // Firebase: begin_checkout
+  fbLog('begin_checkout',{currency:'CLP', value:total, items:S.cart.map(i=>({item_id:String(i.id), item_name:i.p.name, price:i.p.price, quantity:i.qty}))});
+  fbSaveCartEvent(S.cart, total);
   window.open('https://wa.me/56950147783?text='+encodeURIComponent(msg),'_blank');
 }
 
@@ -1007,29 +1307,52 @@ function checkoutWA(){
 function toggleFav(e,id){
   e.stopPropagation();
   const btn=e.currentTarget;
-  if(S.favs.has(id)){S.favs.delete(id);btn.classList.remove('faved');btn.textContent='🤍';toast('Eliminado de favoritos')}
-  else{S.favs.add(id);btn.classList.add('faved');btn.textContent='❤️';toast('❤️ Guardado en favoritos')}
+  if(S.favs.has(id)){
+    S.favs.delete(id);btn.classList.remove('faved');btn.textContent='🤍';
+    btn.setAttribute('aria-pressed','false');
+    toast('Eliminado de favoritos');
+  } else {
+    S.favs.add(id);btn.classList.add('faved');btn.textContent='❤️';
+    btn.setAttribute('aria-pressed','true');
+    toast('❤️ Guardado en favoritos');
+    fbLog('add_to_wishlist',{item_id:String(id)});
+  }
+  saveState();
 }
 function toggleFavDetail(id){
   const btn=$('df-btn'),ico=$('df-ico');
-  if(S.favs.has(id)){S.favs.delete(id);btn.classList.remove('faved');ico.textContent='🤍';toast('Eliminado de favoritos')}
-  else{S.favs.add(id);btn.classList.add('faved');ico.textContent='❤️';toast('❤️ Guardado en favoritos')}
+  if(S.favs.has(id)){
+    S.favs.delete(id);btn.classList.remove('faved');ico.textContent='🤍';
+    btn.setAttribute('aria-pressed','false');
+    toast('Eliminado de favoritos');
+  } else {
+    S.favs.add(id);btn.classList.add('faved');ico.textContent='❤️';
+    btn.setAttribute('aria-pressed','true');
+    toast('❤️ Guardado en favoritos');
+    fbLog('add_to_wishlist',{item_id:String(id)});
+  }
+  saveState();
   renderGrid();
 }
 
 /* ─── SUBSCRIBE ─── */
-function doSubscribe(id){
+async function doSubscribe(id){
   const inp=$('em-'+id);
   const email=(inp?.value||'').trim();
   if(!email||!email.includes('@')){toast('⚠️ Ingresa un email válido');return}
+  // Save to Firestore
+  const saved = await fbSaveSubscriber(email, id);
+  fbLog('sign_up',{method:'email', email});
+  // Fallback: also send to WhatsApp
   const msg=`Hola! Quiero suscribirme para recibir ofertas exclusivas. Email: ${email}`;
   window.open('https://wa.me/56950147783?text='+encodeURIComponent(msg),'_blank');
   if(inp) inp.value='';
-  toast('🎉 ¡Suscripción enviada! Revisa tu WhatsApp');
+  toast(saved ? '🎉 ¡Suscripción guardada! Revisa tu WhatsApp' : '🎉 ¡Suscripción enviada! Revisa tu WhatsApp');
 }
 
 /* ─── WHATSAPP ─── */
 function openWhatsApp(msg){
+  fbLog('contact',{method:'whatsapp'});
   window.open('https://wa.me/56950147783?text='+encodeURIComponent(msg),'_blank');
 }
 function openWAReview(id){
@@ -1040,13 +1363,20 @@ function openWAReview(id){
 /* ─── SCROLL HELPERS ─── */
 function scrollToCatalog(){$('grid').scrollIntoView({behavior:'smooth',block:'start'})}
 function scrollToTop(){$('view-catalog').scrollTo({top:0,behavior:'smooth'})}
-function focusSearch(){
-  $('search-inp').focus();
-  $('filter-zone')?.scrollIntoView({behavior:'smooth'});
-}
 
 /* ─── INIT ─── */
-renderGrid();
+document.addEventListener('DOMContentLoaded',()=>{
+  loadState();
+  renderGrid();
+  updateDot();
+  // Track scroll depth
+  let maxScroll=0;
+  $('view-catalog').addEventListener('scroll',()=>{
+    const el=$('view-catalog');
+    const pct=Math.round((el.scrollTop/(el.scrollHeight-el.clientHeight))*100);
+    if(pct>maxScroll+24){maxScroll=pct;fbLog('scroll',{percent_scrolled:pct});}
+  });
+});
 </script>
 </body>
 </html>
